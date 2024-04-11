@@ -1,6 +1,6 @@
 import keras.optimizers
 from keras import models, layers, metrics
-from data_preprocessing import load_data
+from utils.data_preprocessing import load_data_cifake
 import pickle
 
 model = models.Sequential()
@@ -18,10 +18,10 @@ model.compile(
     ["accuracy", keras.metrics.Recall(), keras.metrics.Precision()]
 )
 
-x_train, x_valid = load_data()
+x_train, x_valid = load_data_cifake()
 
 history = model.fit(x_train, validation_data=x_valid, epochs=10)
 
 model.save("model1.h5")
-with open("history.pkl", 'wb') as f:
+with open("saved_models/history.pkl", 'wb') as f:
     pickle.dump(history, f)

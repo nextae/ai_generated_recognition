@@ -4,20 +4,34 @@ import cv2
 import tensorflow as tf
 
 
-def load_data():
-    x_train = tf.keras.preprocessing.image_dataset_from_directory(
+def load_data_cifake():
+    train = tf.keras.preprocessing.image_dataset_from_directory(
         'datasets/CIFAKE/train',
         label_mode='binary',
         image_size=[32, 32]
     )
 
-    x_valid = tf.keras.preprocessing.image_dataset_from_directory(
+    valid = tf.keras.preprocessing.image_dataset_from_directory(
         'datasets/CIFAKE/test',
         label_mode='binary',
         image_size=[32, 32]
     )
 
-    return x_train, x_valid
+    return train, valid
+
+
+def load_data_artifact():
+    train, valid = tf.keras.preprocessing.image_dataset_from_directory(
+        'datasets/artifact',
+        label_mode='binary',
+        image_size=[200, 200],
+        validation_split=0.2,
+        subset='both',
+        shuffle=True,
+        interpolation='area'
+    )
+
+    return train, valid
 
 
 def preprocess(
