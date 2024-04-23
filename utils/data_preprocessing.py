@@ -20,15 +20,17 @@ def load_data_cifake():
     return train, valid
 
 
-def load_data_artifact():
+def load_data_artifact(dir_path):
     train, valid = tf.keras.preprocessing.image_dataset_from_directory(
-        'datasets/artifact',
+        dir_path,
         label_mode='binary',
         image_size=[200, 200],
         validation_split=0.2,
         subset='both',
         shuffle=True,
-        interpolation='area'
+        seed=42,
+        interpolation='area',
+        batch_size=256
     )
 
     return train, valid

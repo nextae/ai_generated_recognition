@@ -12,10 +12,10 @@ NOTES = ["mat - przerobiona lama?",
          "cycle-gan - wymieszane real i fake"]
 
 # Set the paths for Kaggle datasets
-input_folder = "datasets/datasets"
-temporary_folder = "datasets/temp"
-real_images_folder = "datasets/artifact/real_images"
-fake_images_folder = "datasets/artifact/fake_images"
+input_folder = "../datasets/datasets"
+temporary_folder = "../datasets/temp"
+real_images_folder = "../datasets/artifact/real_images"
+fake_images_folder = "../datasets/artifact/fake_images"
 
 # List of real image file names
 real_image_files = ["afhq", "celebahq", "coco", "ffhq", "imagenet", "landscape", "lsun", "metfaces"]
@@ -28,12 +28,10 @@ def copy_images(source_dir, real_target_dir, fake_target_dir):
     Path(fake_target_dir).mkdir(parents=True, exist_ok=True)
 
     counter = 0
-
     # Iterate through all files and directories in the source directory
     for root, dirs, files in os.walk(source_dir):
         if any(ignore in root for ignore in to_ignore):
             continue
-
         for file in files:
             if file.endswith(".zip"):
                 continue
