@@ -2,7 +2,7 @@
 
 ## Opis Projektu
 
-Repozytorium zawiera kod źródłowy związany z uniwersyteckim projektem badawczym dotyczącym wykrywania obrazów wygenerowanych przez AI przy użyciu sieci neuronowych. Wykorzystane zostały głębokie konwolucyjne sieci neuronowe.
+Repozytorium zawiera kod źródłowy związany z uniwersyteckim projektem badawczym dotyczącym wykrywania obrazów wygenerowanych przez AI przy użyciu głębokich konwolucyjnych sieci neuronowych.
 
 ## Wymagania
 
@@ -21,10 +21,6 @@ Repozytorium zawiera kod źródłowy związany z uniwersyteckim projektem badawc
 ## Licencja
 
 Ten projekt jest objęty licencją MIT - sprawdź plik `LICENSE.md` w celu uzyskania dodatkowych informacji.
-
-## Wnioski
-
-Projekt dostarcza analizę implementacji różnych modeli predykcji skupienia wzroku. Przedstawione wyniki mogą być użyte jako punkt wyjścia do dalszych badań nad tą tematyką.
 
 ## Kontakt
 
